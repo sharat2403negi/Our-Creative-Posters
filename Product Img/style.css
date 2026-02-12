@@ -1,0 +1,84 @@
+/* style.css */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 { text-align: center; color: #333; }
+
+/* Masonry Grid Setup */
+.masonry-grid {
+    column-count: 4; /* Number of columns */
+    column-gap: 15px;
+}
+
+.item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.item img {
+    width: 100%;
+    display: block;
+    filter: saturate(1.1) contrast(1.05); /* Makes posters pop */
+    transition: filter 0.3s ease;
+}
+
+/* Hover Effect */
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item:hover img {
+    filter: saturate(1.3) contrast(1.1) brightness(0.9);
+}
+
+/* Responsive columns */
+@media (max-width: 900px) { .masonry-grid { column-count: 3; } }
+@media (max-width: 600px) { .masonry-grid { column-count: 2; } }
+
+/* Fullscreen Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
